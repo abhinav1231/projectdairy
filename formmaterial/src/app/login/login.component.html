@@ -1,0 +1,99 @@
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+    <div id="Login" class="mt-5 mb-5">
+
+      <div class="form-group">
+        <input type="email" class="form-control" [(ngModel)]="email" id="inputEmail1" placeholder="Email Address">
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-control" id="inputPassword" [(ngModel)]="password" placeholder="Password">
+      </div>
+      <div class="forgot">
+        <a href="reset.html">Forgot password?</a>
+      </div>
+<button type="submit" class="btn btn-primary mt-3 mb-3" (click)="login()">Login</button>
+    </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <button type="button" mat-button id="button1" (click)="drawer.toggle()">
+      <h1>
+        <i class="fas fa-bars"></i>
+      </h1>
+    </button>
+    <mat-card>
+      <div class="example-form">
+        <div class="w-75 float-left p-4 text-center">
+          <mat-form-field>
+            <input matInput [(ngModel)]="date" [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <mat-divider></mat-divider>
+
+        <div class="w-75 float-left p-4 text-center">
+          <mat-form-field>
+            <mat-select [(ngModel)]="subject" placeholder="Subject">
+              <mat-option value="option">Java</mat-option>
+              <mat-option value="option">Angular</mat-option>
+              <mat-option value="option">Html</mat-option>
+              <mat-option value="option">Node Js</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <mat-divider></mat-divider>
+
+        <div class="w-75 float-left p-4 text-center">
+          <mat-form-field>
+            <mat-select [(ngModel)]="teacher" placeholder="Teacher">
+              <mat-option value="option">Kuvar</mat-option>
+              <mat-option value="option">Abhinav</mat-option>
+              <mat-option value="option">Gaurav</mat-option>
+              <mat-option value="option">Sandeep</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <mat-divider></mat-divider>
+
+        <div class="w-75 float-left p-4 text-center">
+          <mat-form-field class="example-full-width">
+            <textarea [(ngModel)]="comment" matInput placeholder="Leave a comment"></textarea>
+          </mat-form-field>
+        </div>
+        <mat-divider></mat-divider>
+
+        <div class="w-75 float-left p-4 text-center">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <input class="btn btn-primary" (click)="login()"  type="submit" value="Submit">
+              </div>
+              <div class="col-sm">
+                <button type="button" (click)="login()" class="btn btn-outline-success">Success</button>
+              </div>
+              <div class="col-sm">
+                <button type="button" (click)="login()" class="btn btn-outline-danger">Danger</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-75 float-left p-4 text-center">
+
+
+        </div>
+
+      </div>
+    </mat-card>
+
+  </div>
+
+</mat-drawer-container>
+
+
+
